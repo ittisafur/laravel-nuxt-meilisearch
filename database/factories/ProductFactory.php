@@ -29,12 +29,12 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->word;
+        $title = ucfirst($this->faker->word());
 
         return [
             'title' => $title,
             'slug' => Str::slug($title) . Str::random(6),
-            'teaser' => $this->faker->word,
+            'teaser' => $this->faker->word(),
             'price' => rand(1000 , 10000),
             'rating' => rand(1, 5),
             'brand_id' => Brand::all()->random()->id

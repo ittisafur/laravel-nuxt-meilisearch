@@ -21,9 +21,10 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
+        $name = ucfirst($this->faker->word());
         return [
-            'name' => $this->faker->company,
-            'desc' => $this->faker->paragraph
+            'name' => $name,
+            'desc' => $this->faker->paragraph(2)
         ];
     }
 }

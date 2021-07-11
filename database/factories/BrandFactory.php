@@ -22,8 +22,8 @@ class BrandFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->company,
-            'desc' => $this->faker->paragraph
+            'name' => ucfirst($this->faker->company()),
+            'desc' => $this->faker->paragraph()
         ];
     }
 }
